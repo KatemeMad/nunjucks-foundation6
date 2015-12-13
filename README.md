@@ -1,4 +1,4 @@
-# Foundation 6 + nunjucks templates
+# Foundation 6 + Nunjucks templates
 
 This is the basic starter project for [Foundation for Sites 6](http://foundation.zurb.com/sites). It includes a Sass compiler and a starter HTML file and [Nunjucks](https://mozilla.github.io/nunjucks/) template building.
 
