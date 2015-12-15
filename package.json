@@ -7,7 +7,7 @@
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.2.0",
     "gulp-load-plugins": "^1.1.0",
-    "gulp-nunjucks-html": "^2.0.0",
+    "gulp-nunjucks-render": "^1.0.0",
     "gulp-sass": "^2.1.0"
   },
   "scripts": {
@@ -24,5 +24,6 @@
   },
   "author": "ZURB <foundation@zurb.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {}
 }

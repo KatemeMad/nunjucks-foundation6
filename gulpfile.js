@@ -1,13 +1,16 @@
 var gulp = require('gulp');
 var $    = require('gulp-load-plugins')();
-var nunjucks = require('gulp-nunjucks-html');
+var nunjucksRender = require('gulp-nunjucks-render');
  
 gulp.task('nunjucks', function() {
-  return gulp.src('templates/**/*.html')
-    .pipe(nunjucks({
-      searchPaths: ['templates']
-    }))
-    .pipe(gulp.dest('dist'));
+  nunjucksRender.nunjucks.configure(['templates/']);
+
+  // Gets .html and .nunjucks files in pages
+  return gulp.src('templates/*.+(html|nunjucks)')
+  // Renders template with nunjucks
+  .pipe(nunjucksRender())
+  // output files in app folder
+  .pipe(gulp.dest('dist'))
 });
 
 var sassPaths = [
