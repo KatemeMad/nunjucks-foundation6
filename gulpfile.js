@@ -10,7 +10,7 @@ gulp.task('nunjucks', function() {
   // Renders template with nunjucks
   .pipe(nunjucksRender())
   // output files in app folder
-  .pipe(gulp.dest('dist'))
+  .pipe(gulp.dest('public'))
 });
 
 var sassPaths = [
@@ -27,7 +27,7 @@ gulp.task('sass', function() {
     .pipe($.autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
     }))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('default', ['sass', 'nunjucks'], function() {
