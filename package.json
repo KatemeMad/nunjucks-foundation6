@@ -11,11 +11,14 @@
     "gulp-nunjucks-render": "^1.0.0",
     "gulp-sass": "^2.1.0",
     "gulp-uglify": "^1.5.1",
-    "gulp-usemin": "^0.3.16"
+    "gulp-usemin": "^0.3.16",
+    "json-server": "^0.8.4"
   },
   "scripts": {
-    "start": "gulp",
-    "build": "gulp sass"
+    "start": "node server.js",
+    "watch": "gulp",
+    "build": "gulp sass",
+    "dev": "npm start & npm run watch"
   },
   "repository": {
     "type": "git",
