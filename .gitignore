@@ -1,7 +1,6 @@
 .DS_Store
-bower_components
+src/bower_components
 node_modules
 npm-debug.log
-css
-dist
-
+public/css
+public/lib
