@@ -1,5 +1,6 @@
 # nunjucks-foundation6
 Template Nunjucks + Foundation6
+el origen de este template esta en https://github.com/kushalj/foundation6-nunjucks
 
 - Instalar NodeJS
 - Crear una carpeta del proyecto que vayamos a hacer 'md proyecto-ejemplo'
