@@ -3,6 +3,9 @@ const gulp = require('gulp');
 const $    = require('gulp-load-plugins')();
 const nunjucksRender = require('gulp-nunjucks-render');
 const bower = require('gulp-bower');
+var livereload = require('gulp-livereload');
+
+
 
 const publicRoot = 'public';
 const bowerDir = 'src/bower_components';
@@ -11,6 +14,7 @@ const bowerDir = 'src/bower_components';
 gulp.task('bower', function() {
     return bower()
     .pipe(gulp.dest( path.join(publicRoot, 'lib/') ))
+    .pipe(livereload());
 });
 
 // Nunjucks
@@ -23,6 +27,7 @@ gulp.task('nunjucks', function() {
   .pipe(nunjucksRender())
   // output files in app folder
   .pipe(gulp.dest(publicRoot))
+  .pipe(livereload());
 });
 
 
@@ -41,10 +46,13 @@ gulp.task('sass', function() {
     .pipe($.autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
     }))
-    .pipe(gulp.dest( path.join(publicRoot, 'css') ));
+    .pipe(gulp.dest( path.join(publicRoot, 'css') ))
+    .pipe(livereload());
 });
 
 gulp.task('default', ['sass', 'nunjucks', 'bower'], function() {
   gulp.watch(['src/scss/**/*.scss'], ['sass']);
   gulp.watch(['src/templates/**/*.html'], ['nunjucks']);
+  livereload({ start: true });
+  livereload.listen();
 });
